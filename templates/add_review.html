@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<form action="{{ url_for('pizzas.add_review') }}" method="post">
+    <div class="form-group">
+        {{ form.author.label }}
+        {{ form.author(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.text.label }}
+        {{ form.text(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.grade.label }}
+        {{ form.grade(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-success") }}
+</form>
+{% endblock content %}

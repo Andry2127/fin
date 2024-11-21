@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <td>№</td>
+            <td>Автор</td>
+            <td>Відгук</td>
+            <td>Бал</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for review in reviews %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ review.author }}</td>
+            <td>{{ review.text }}</td>
+            <td>{{ form.grade.value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
